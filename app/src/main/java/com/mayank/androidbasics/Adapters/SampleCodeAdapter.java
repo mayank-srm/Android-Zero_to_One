@@ -12,9 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mayank.androidbasics.Activities.HelloActivity;
-import com.mayank.androidbasics.Activities.MainActivity;
-import com.mayank.androidbasics.Activities.Testing;
+import com.mayank.androidbasics.Activities.LoadingActivity;
+import com.mayank.androidbasics.Activities.SumActivity;
 import com.mayank.androidbasics.Data_Handling.Home_list_data;
 import com.mayank.androidbasics.R;
 
@@ -22,25 +21,25 @@ import com.mayank.androidbasics.R;
  * Created by MAYANK SINGH on 21-05-2019.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
+public class SampleCodeAdapter extends RecyclerView.Adapter<SampleCodeAdapter.ViewHolder>{
 
     public   Home_list_data[] list_data;
 
-    public MyAdapter(Home_list_data[] list_data){
+    public SampleCodeAdapter(Home_list_data[] list_data){
         this.list_data  = list_data;
     }
 
     @NonNull
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SampleCodeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_home, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.list_sample_code, parent, false);
         return new ViewHolder(listItem);
     }
 
     @SuppressLint("RecyclerView")
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder,  final int position) {
+    public void onBindViewHolder(@NonNull SampleCodeAdapter.ViewHolder holder, final int position) {
         final Home_list_data myListData = list_data[position];
         holder.textView.setText(list_data[position].getDescription());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -50,16 +49,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                 final Intent intent;
                 switch (position){
                     case 0:
-                        intent = new Intent(view.getContext() , MainActivity.class);
+                        intent = new Intent(view.getContext() , SumActivity.class);
                             break;
 
-                    case 1:
-                        intent = new Intent(view.getContext(), Testing.class);
-                        break;
-
-
                         default:
-                            intent = new Intent(view.getContext() , HelloActivity.class);
+                            intent = new Intent(view.getContext() , LoadingActivity.class);
                             break;
                 }
                 view.getContext().startActivity(intent);

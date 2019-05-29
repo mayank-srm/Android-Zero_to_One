@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.mayank.androidbasics.R;
 
-public class MainActivity extends AppCompatActivity {
+public class SumActivity extends AppCompatActivity {
 
     public EditText num1, num2;
     TextView result;
