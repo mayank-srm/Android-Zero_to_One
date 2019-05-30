@@ -2,7 +2,12 @@ package com.mayank.androidbasics.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
+import com.mayank.androidbasics.Adapters.BasicsAdapter;
+import com.mayank.androidbasics.Adapters.SampleCodeAdapter;
+import com.mayank.androidbasics.Data_Handling.Home_list_data;
 import com.mayank.androidbasics.R;
 
 public class BasicsActivity extends AppCompatActivity {
@@ -11,5 +16,21 @@ public class BasicsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basics);
+
+
+        Home_list_data[] myListData = new Home_list_data[] {
+                new Home_list_data("This is a textview","textView"),
+                new Home_list_data("This is the EditText","Edit text"),
+                new Home_list_data("Testing purpose","testing")
+        };
+
+        RecyclerView recyclerView = findViewById(R.id.basics_recycleView);
+        BasicsAdapter adapter = new BasicsAdapter(myListData);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+
+
     }
 }

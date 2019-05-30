@@ -12,8 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mayank.androidbasics.Activities.LoadingActivity;
-import com.mayank.androidbasics.Activities.SumActivity;
+import com.mayank.androidbasics.Sample_Code_Activity.LoadingActivity;
+import com.mayank.androidbasics.Sample_Code_Activity.SumActivity;
 import com.mayank.androidbasics.Data_Handling.Home_list_data;
 import com.mayank.androidbasics.R;
 
@@ -23,10 +23,10 @@ import com.mayank.androidbasics.R;
 
 public class SampleCodeAdapter extends RecyclerView.Adapter<SampleCodeAdapter.ViewHolder>{
 
-    public   Home_list_data[] list_data;
+    public   Home_list_data[] list_data_samplecode;
 
     public SampleCodeAdapter(Home_list_data[] list_data){
-        this.list_data  = list_data;
+        this.list_data_samplecode  = list_data;
     }
 
     @NonNull
@@ -40,8 +40,8 @@ public class SampleCodeAdapter extends RecyclerView.Adapter<SampleCodeAdapter.Vi
     @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull SampleCodeAdapter.ViewHolder holder, final int position) {
-        final Home_list_data myListData = list_data[position];
-        holder.textView.setText(list_data[position].getDescription());
+        final Home_list_data myListData = list_data_samplecode[position];
+        holder.textView.setText(list_data_samplecode[position].getDescription());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +68,7 @@ public class SampleCodeAdapter extends RecyclerView.Adapter<SampleCodeAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return list_data.length;
+        return list_data_samplecode.length;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

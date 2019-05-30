@@ -1,4 +1,4 @@
-package com.mayank.androidbasics.Activities;
+package com.mayank.androidbasics.Sample_Code_Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +22,7 @@ public class SumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sum);
 
         num1 = findViewById(R.id.num1);
         num2 = findViewById(R.id.num2);
@@ -43,7 +43,7 @@ public class SumActivity extends AppCompatActivity {
        if(valid) {
            sum = a + b;
        }
-       else{
+       else {
            Toast.makeText(this,"input some number",Toast.LENGTH_SHORT).show();
        }
             result.setText(String.valueOf(sum));

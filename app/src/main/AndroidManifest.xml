@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".Activities.BasicsActivity"></activity>
+        <activity
+            android:name=".BasicsActivity.BasicsActivities"
+            android:label="@string/title_activity_basics_activities"></activity>
+        <activity android:name=".BasicsActivity.EditTextActivity" />
+        <activity android:name=".BasicsActivity.TextViewActivity" />
+        <activity android:name=".Activities.BasicsActivity" />
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_base"
@@ -27,12 +32,12 @@
         </activity>
         <activity
             android:name=".Activities.SampleCodesActivity"
-            tools:ignore="InnerclassSeparator"></activity>
-        <activity
-            android:name=".Activities.LoadingActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activities.SumActivity"
+            android:name=".Sample_Code_Activity.LoadingActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Sample_Code_Activity.SumActivity"
             tools:ignore="InnerclassSeparator" />
     </application>
 

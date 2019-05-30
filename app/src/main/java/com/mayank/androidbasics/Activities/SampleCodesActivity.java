@@ -17,12 +17,12 @@ public class SampleCodesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample_code);
 
         Home_list_data[] myListData = new Home_list_data[] {
-                new Home_list_data("Sum of two numbers"),
-                new Home_list_data("Print the Name"),
-                new Home_list_data("Testing")
+                new Home_list_data("Sum of two numbers","sum"),
+                new Home_list_data("Print the Name","str"),
+                new Home_list_data("Testing","test")
         };
 
-        RecyclerView recyclerView = findViewById(R.id.home_recycle);
+        RecyclerView recyclerView = findViewById(R.id.sample_code_recycleView);
         SampleCodeAdapter adapter = new SampleCodeAdapter(myListData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
