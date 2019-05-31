@@ -1,52 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BasicsActivity.BasicsActivities">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/message1"
-        android:layout_width="232dp"
-        android:layout_height="125dp"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded" />
-
-    <TextView
-        android:id="@+id/message2"
-        android:layout_width="191dp"
-        android:layout_height="123dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="332dp"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded" />
+        android:id="@+id/activity_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Activity Name"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textColor="#D84315"/>
 
     <TextView
-        android:id="@+id/message3"
-        android:layout_width="232dp"
-        android:layout_height="125dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="104dp"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded" />
+        android:id="@+id/activity_discription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_name"
+        android:text="Discription"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#000"
+        android:textSize="25sp"/>
 
-        <TextView
-            android:id="@+id/message4"
-            android:layout_width="191dp"
-            android:layout_height="123dp"
-            android:layout_below="@+id/message3"
-            android:text="@string/title_home"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/activity_discription"
+            android:layout_margin="10dp"
+            android:background="#000000"/>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/main.java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_discription"
+        android:text="MainActivity.java"
+        android:textColor="#FF6F00"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_margin="25dp"/>
+
+    <TextView
+        android:id="@+id/java_code"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main.java"
+        android:layout_margin="10dp"
+        android:textIsSelectable="true"
+        android:background="#E9E5E5"
+        android:text="Java Code"/>
+    <TextView
+        android:id="@+id/main.xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/java_code"
+        android:text="activity_main.xml"
+        android:textColor="#FF6F00"
+        android:textSize="20sp"
+        android:layout_margin="25dp"/>
+
+    <TextView
+        android:id="@+id/xml_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main.xml"
+        android:layout_margin="10dp"
+        android:textIsSelectable="true"
+        android:text="Xml Code"
+        android:background="#E9E5E5"
+        />
+    </RelativeLayout>
+</ScrollView>

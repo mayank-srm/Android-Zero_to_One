@@ -15,6 +15,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:name=".BasicsActivity.BasicsActivities"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_basics_activities"
             tools:ignore="InnerclassSeparator">
 

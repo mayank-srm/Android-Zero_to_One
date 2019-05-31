@@ -2,6 +2,7 @@ package com.mayank.androidbasics.BasicsActivity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 import com.mayank.androidbasics.R;
@@ -31,15 +32,17 @@ public class BasicsActivities extends AppCompatActivity{
     }
     private void setmTextMessage(String activityname , String activitydiscription,String java , String xml){
 
-        TextView actname  = findViewById(R.id.message1);
-        TextView actdis  = findViewById(R.id.message2);
-        TextView javacode  = findViewById(R.id.message3);
-        TextView xmlcode  = findViewById(R.id.message4);
+        TextView actname  = findViewById(R.id.activity_name);
+        TextView actdis  = findViewById(R.id.activity_discription);
+        TextView javacode  = findViewById(R.id.java_code);
+        TextView xmlcode  = findViewById(R.id.xml_code);
 
         actname.setText(activityname);
         actdis.setText(activitydiscription);
         javacode.setText(java);
         xmlcode.setText(xml);
+
+      //  javacode.setMovementMethod(new ScrollingMovementMethod());
     }
 
 }

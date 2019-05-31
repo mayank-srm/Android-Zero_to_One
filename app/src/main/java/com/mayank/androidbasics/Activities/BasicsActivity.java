@@ -18,7 +18,26 @@ public class BasicsActivity extends AppCompatActivity {
 
 
         Home_list_data[] myListData = new Home_list_data[] {
-                new Home_list_data("This is a textview","textView","hughdj","jsghsj"),
+                new Home_list_data("A user interface element that displays text to the user. ","TextView",
+                        "public class MainActivity extends Activity {\n" +
+                                "\n" +
+                                "    protected void onCreate(Bundle savedInstanceState) {\n" +
+                                "         super.onCreate(savedInstanceState);\n" +
+                                "         setContentView(R.layout.activity_main);\n" +
+                                "         final TextView helloTextView = findViewById(R.id.text_view_id);\n" +
+                                "         helloTextView.setText(R.string.user_greeting);\n" +
+                                "     }\n" +
+                                " }\n",
+                        " <LinearLayout\n" +
+                                "      xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
+                                "      android:layout_width=\"match_parent\"\n" +
+                                "      android:layout_height=\"match_parent\">\n" +
+                                "    <TextView\n" +
+                                "        android:id=\"@+id/text_view_id\"\n" +
+                                "        android:layout_height=\"wrap_content\"\n" +
+                                "        android:layout_width=\"wrap_content\"\n" +
+                                "        android:text=\"@string/hello\" />\n" +
+                                " </LinearLayout>>"),
                 new Home_list_data("This is the EditText","Edit text","hughdj","jsghsj"),
                 new Home_list_data("Testing purpose","testing","hughdj","jsghsj")
         };
