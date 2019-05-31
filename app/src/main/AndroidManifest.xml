@@ -15,10 +15,12 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:name=".BasicsActivity.BasicsActivities"
-            android:label="@string/title_activity_basics_activities"></activity>
-        <activity android:name=".BasicsActivity.EditTextActivity" />
-        <activity android:name=".BasicsActivity.TextViewActivity" />
-        <activity android:name=".Activities.BasicsActivity" />
+            android:label="@string/title_activity_basics_activities"
+            tools:ignore="InnerclassSeparator">
+
+        </activity>
+        <activity android:name=".Activities.BasicsActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_base"
