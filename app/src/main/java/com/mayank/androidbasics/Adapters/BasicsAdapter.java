@@ -63,6 +63,8 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
                 Intent i = new Intent(view.getContext(),BasicsActivities.class);
                 i.putExtra("activity_name",myListData.getActivity());
                 i.putExtra("discription",myListData.getDescription());
+                i.putExtra("javacode",myListData.getJavacod());
+                i.putExtra("xmlcode",myListData.getXmlcode());
                 view.getContext().startActivity(i);
             }
         });

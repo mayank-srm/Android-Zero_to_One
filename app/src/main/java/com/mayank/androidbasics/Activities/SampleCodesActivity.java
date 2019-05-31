@@ -17,9 +17,9 @@ public class SampleCodesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample_code);
 
         Home_list_data[] myListData = new Home_list_data[] {
-                new Home_list_data("Sum of two numbers","sum"),
-                new Home_list_data("Print the Name","str"),
-                new Home_list_data("Testing","test")
+                new Home_list_data("Sum of two numbers","sum","sjicsokckpos","chbsdckjsd"),
+                new Home_list_data("Print the Name","str","sjicsokckpos","chbsdckjsd"),
+                new Home_list_data("Testing","test","sjicsokckpos","chbsdckjsd")
         };
 
         RecyclerView recyclerView = findViewById(R.id.sample_code_recycleView);
