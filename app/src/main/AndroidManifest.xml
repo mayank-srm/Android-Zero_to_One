@@ -14,13 +14,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
+            android:name=".Activities.LayoutsActivity"
+            tools:ignore="InnerclassSeparator"></activity>
+        <activity
             android:name=".BasicsActivity.BasicsActivities"
-            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_basics_activities"
-            tools:ignore="InnerclassSeparator">
-
-        </activity>
-        <activity android:name=".Activities.BasicsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.BasicsActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.HomeActivity"
