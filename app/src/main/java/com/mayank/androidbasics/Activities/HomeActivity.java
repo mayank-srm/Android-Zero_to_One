@@ -9,11 +9,18 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.mayank.androidbasics.Adapters.HomeAdapter;
+import com.mayank.androidbasics.Adapters.SampleCodeAdapter;
+import com.mayank.androidbasics.Data_Handling.Home_list_data;
+import com.mayank.androidbasics.Data_Handling.home_data;
 import com.mayank.androidbasics.R;
 
 @SuppressLint("Registered")
@@ -41,6 +48,21 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        home_data[] myListData = new home_data[] {
+                new home_data("Basics"),
+                new home_data("Sample Codes"),
+                new home_data("Layouts")
+        };
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        HomeAdapter adapter = new HomeAdapter(myListData);
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(HomeActivity.this, 2);
+        recyclerView.setLayoutManager(mGridLayoutManager);
+        recyclerView.setHasFixedSize(true);
+      //  recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
     }
 
     @Override

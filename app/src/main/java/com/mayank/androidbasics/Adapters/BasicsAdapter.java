@@ -59,7 +59,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
 //                view.getContext().startActivity(intent);
 
 
-                Toast.makeText(view.getContext(),"click on item: "+myListData.getDescription(),Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(),"click on item: "+myListData.getActivity(),Toast.LENGTH_LONG).show();
                 Intent i = new Intent(view.getContext(),BasicsActivities.class);
                 i.putExtra("activity_name",myListData.getActivity());
                 i.putExtra("discription",myListData.getDescription());
@@ -79,7 +79,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
         public TextView textView_basics;
         public RelativeLayout relativeLayout_basics;
         public final Context mcontext_basics;
-        ViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             mcontext_basics = itemView.getContext();
             this.textView_basics = itemView.findViewById(R.id.basics_textView);

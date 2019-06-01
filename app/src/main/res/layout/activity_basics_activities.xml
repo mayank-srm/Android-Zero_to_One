@@ -38,7 +38,7 @@
             android:layout_marginTop="10dp"
             android:layout_below="@+id/activity_discription"
             android:layout_margin="10dp"
-            android:background="#000000"/>
+            android:background="#D81B60"/>
 
     <TextView
         android:id="@+id/main.java"
