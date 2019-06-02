@@ -16,9 +16,7 @@ public class BasicsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basics);
 
-
         Home_list_data[] myListData = new Home_list_data[] {
-
 
                 // TextView data
                 new Home_list_data(
@@ -262,8 +260,6 @@ public class BasicsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
-
 
     }
 }

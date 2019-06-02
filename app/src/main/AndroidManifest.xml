@@ -7,15 +7,36 @@
 
     <application
         android:allowBackup="true"
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <activity
+            android:name=".Quiz.MainGameActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator">
+
+        </activity>
+        <activity
+            android:name=".Quiz.HomeScreen"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.InterViewActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".LayoutsActivity.LayoutsActicties"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.AboutActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.LayoutsActivity"
-            tools:ignore="InnerclassSeparator"></activity>
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".BasicsActivity.BasicsActivities"
             android:label="@string/title_activity_basics_activities"
@@ -26,7 +47,7 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.HomeActivity"
-            android:label="@string/title_activity_base"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
@@ -44,6 +65,17 @@
         <activity
             android:name=".Sample_Code_Activity.SumActivity"
             tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Quiz.GameWon"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Quiz.PlayAgain"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Quiz.Time_Up"
+            tools:ignore="InnerclassSeparator" />
+
     </application>
+
 
 </manifest>

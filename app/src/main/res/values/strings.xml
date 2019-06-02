@@ -21,4 +21,27 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="about_description">This app is based\n
+        on Google\'s Material Component \n
+        And it\'s design \n
+        Guidelines.</string>
+    <string name="support_name">MaterialX</string>
+    <string name="support_description">MaterialX is a Material component based app.
+        \nIt is available on Envatomarket and it is paid.
+        \nI take it for my reference.</string>
+
+
+    <string name="question">Question</string>
+    <string name="play_again">Play again</string>
+    <string name="time">15</string>
+    <string name="correct">Correct</string>
+    <string name="wrongans">Opps the ans was wrong</string>
+    <string name="timeup">Time Up</string>
+    <string name="play_game">Play Game</string>
+    <string name="quit">Quit</string>
+    <string name="next">Next</string>
+    <string name="cancel">✖</string>
+    <string name="developer_name">MAYANK SINGH</string>
 </resources>

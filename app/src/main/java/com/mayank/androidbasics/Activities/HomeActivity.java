@@ -3,6 +3,7 @@ package com.mayank.androidbasics.Activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,7 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
 import com.mayank.androidbasics.Adapters.HomeAdapter;
 import com.mayank.androidbasics.Data_Handling.home_data;
@@ -23,6 +24,8 @@ import com.mayank.androidbasics.R;
 @SuppressLint("Registered")
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,10 @@ public class HomeActivity extends AppCompatActivity
         home_data[] myListData = new home_data[] {
                 new home_data("Basics"),
                 new home_data("Sample Codes"),
-                new home_data("Layouts")
+                new home_data("Layouts"),
+                new home_data("Interview Questions"),
+                new home_data("Quiz (Beta)"),
+                new home_data("Coming Soon")
         };
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -58,9 +64,20 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            return;
         }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 
     @Override
@@ -98,6 +115,9 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
+            Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+            startActivity(intent);
+            finish();
 
         } else if (id == R.id.nav_share) {
 
@@ -108,16 +128,5 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void OpenBasics(View view) {
-        Intent i = new Intent(this, BasicsActivity.class);
-        startActivity(i);
-    }
-
-    public void OpenSampleCodes(View view) {
-        Intent i = new Intent(this,SampleCodesActivity.class);
-        startActivity(i);
-
     }
 }

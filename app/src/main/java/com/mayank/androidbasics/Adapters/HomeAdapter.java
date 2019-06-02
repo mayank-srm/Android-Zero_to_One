@@ -1,5 +1,6 @@
 package com.mayank.androidbasics.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,16 +14,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mayank.androidbasics.Activities.BasicsActivity;
+import com.mayank.androidbasics.Activities.InterViewActivity;
+import com.mayank.androidbasics.Activities.LayoutsActivity;
 import com.mayank.androidbasics.Activities.SampleCodesActivity;
 import com.mayank.androidbasics.Data_Handling.home_data;
+import com.mayank.androidbasics.Quiz.HomeScreen;
 import com.mayank.androidbasics.R;
+import com.mayank.androidbasics.Sample_Code_Activity.LoadingActivity;
 
 /**
  * Created by MAYANK SINGH on 01-06-2019.
  */
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
-    public   home_data[] list_data_home;
+    private home_data[] list_data_home;
 
     public HomeAdapter(home_data[] list_data){
         this.list_data_home  = list_data;
@@ -39,7 +44,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         final home_data myListData = list_data_home[position];
         holder.mTitle.setText(list_data_home[position].getActivity());
@@ -53,16 +58,30 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                         intent = new Intent(view.getContext() , BasicsActivity.class);
                         break;
 
+                    case 1:
+                        intent = new Intent(view.getContext(), SampleCodesActivity.class);
+                        break;
+
+                    case 2:
+                        intent = new Intent(view.getContext(), LayoutsActivity.class);
+                        break;
+
+                    case 3:
+                        intent = new Intent(view.getContext(), InterViewActivity.class);
+                        break;
+
+                    case 4:
+                        intent = new Intent(view.getContext(), HomeScreen.class);
+                        break;
+
                     default:
-                        intent = new Intent(view.getContext() , SampleCodesActivity.class);
+                        intent = new Intent(view.getContext(), LoadingActivity.class);
                         break;
                 }
                 view.getContext().startActivity(intent);
 
 
                 Toast.makeText(view.getContext(),"click on item: "+myListData.getActivity(),Toast.LENGTH_LONG).show();
-//                Intent i = new Intent(view.getContext(),MainActivity.class);
-//                view.getContext().startActivity(i);
             }
         });
     }
@@ -71,13 +90,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         return list_data_home.length;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mTitle;
         ImageView mmageview;
-        public LinearLayout mlinearlayout;
-        public final Context mcontext;
-        public ViewHolder(@NonNull View itemView) {
+        final Context mcontext;
+        LinearLayout mlinearlayout;
+
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             mTitle = itemView.findViewById(R.id.tvTitle);
             mmageview = itemView.findViewById(R.id.ivImage);
