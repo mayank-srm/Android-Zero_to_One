@@ -13,10 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
-            android:name=".BasicsActivity.EditText"
+            android:name=".BasicsActivity.EditTextActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>

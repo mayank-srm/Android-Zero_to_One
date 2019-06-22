@@ -15,19 +15,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mayank.androidbasics.BasicsActivity.BasicsActivities;
-import com.mayank.androidbasics.BasicsActivity.EditText;
-import com.mayank.androidbasics.Data_Handling.Home_list_data;
+import com.mayank.androidbasics.BasicsActivity.EditTextActivity;
 import com.mayank.androidbasics.R;
 import com.mayank.androidbasics.Sample_Code_Activity.LoadingActivity;
+import com.mayank.androidbasics.ServerResponse.GetBasicsCategory;
+
+import java.util.List;
 
 /**
  * Created by MAYANK SINGH on 29-05-2019.
  */
 public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder> {
-    public   Home_list_data[] list_data_basics;
 
-    public BasicsAdapter(Home_list_data[] list_data){
-        this.list_data_basics  = list_data;
+    private List<GetBasicsCategory> dataList;
+    private Context context;
+
+    public BasicsAdapter(List<GetBasicsCategory> dataList) {
+        this.context = context;
+        this.dataList = dataList;
     }
 
     @NonNull
@@ -41,12 +46,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
     @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull BasicsAdapter.ViewHolder holder, final int position) {
-        final Home_list_data myListData = list_data_basics[position];
-        holder.textView_basics.setText(list_data_basics[position].getActivity());
-
-
-        //  holder.textView_2.setText(myListData.getDescription());
-
+        holder.textView_basics.setText(dataList.get(position).getName());
 
         holder.button_basics.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +54,11 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
                 final Intent intent;
                 switch (position) {
                     case 0:
-                        intent = new Intent(view.getContext(), EditText.class);
+                        intent = new Intent(view.getContext(), EditTextActivity.class);
                         break;
 
                     case 1:
-                        intent = new Intent(view.getContext(), BasicsActivities.class);
+                        intent = new Intent(view.getContext(), LoadingActivity.class);
                         break;
 
                     default:
@@ -71,29 +71,12 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
         holder.relativeLayout_basics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//                final Intent intent;
-//                switch (position){
-//                    case 0:
-//                        intent = new Intent(view.getContext() , EditTextActivity.class);
-//                        break;
-//
-//                    case 1:
-//                        intent = new Intent(view.getContext() , BasicsActivities.class);
-//                        break;
-//                    default:
-//                        intent = new Intent(view.getContext() , LoadingActivity.class);
-//                        break;
-//                }
-//                view.getContext().startActivity(intent);
-
-
-                Toast.makeText(view.getContext(),"click on item: "+myListData.getActivity(),Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), "click on item: " + dataList.get(position).getName(), Toast.LENGTH_LONG).show();
                 Intent i = new Intent(view.getContext(),BasicsActivities.class);
-                i.putExtra("activity_name",myListData.getActivity());
-                i.putExtra("discription",myListData.getDescription());
-                i.putExtra("javacode",myListData.getJavacod());
-                i.putExtra("xmlcode",myListData.getXmlcode());
+                i.putExtra("activity_name", dataList.get(position).getName());
+                i.putExtra("discription", dataList.get(position).getDesc());
+                i.putExtra("javacode", dataList.get(position).getJavaCode());
+                i.putExtra("xmlcode", dataList.get(position).getXmlCode());
                 view.getContext().startActivity(i);
             }
         });
@@ -101,7 +84,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return list_data_basics.length;
+        return dataList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -114,10 +97,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
             mcontext_basics = itemView.getContext();
             this.textView_basics = itemView.findViewById(R.id.basics_textView);
             relativeLayout_basics = itemView.findViewById(R.id.basics_relativeLayout);
-            //    textView_2 = itemView.findViewById(R.id.basics_button);
             button_basics = itemView.findViewById(R.id.basics_button);
         }
-
-
     }
 }

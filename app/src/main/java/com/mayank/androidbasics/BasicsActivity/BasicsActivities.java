@@ -16,18 +16,15 @@ public class BasicsActivities extends AppCompatActivity {
         getIncomingIntent();
     }
 
-
     private void getIncomingIntent(){
         if(getIntent().hasExtra("activity_name") && getIntent().hasExtra("discription")){
 
             String activityname = getIntent().getStringExtra("activity_name");
             String activitydiscription = getIntent().getStringExtra("discription");
-
             String java = getIntent().getStringExtra("javacode");
             String xml = getIntent().getStringExtra("xmlcode");
 
             setmTextMessage(activityname,activitydiscription,java,xml);
-
         }
     }
     private void setmTextMessage(String activityname , String activitydiscription,String java , String xml){
@@ -41,8 +38,5 @@ public class BasicsActivities extends AppCompatActivity {
         actdis.setText(activitydiscription);
         javacode.setText(java);
         xmlcode.setText(xml);
-
-      //  javacode.setMovementMethod(new ScrollingMovementMethod());
     }
-
 }

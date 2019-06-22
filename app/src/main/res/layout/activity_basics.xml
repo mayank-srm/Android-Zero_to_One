@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Activities.BasicsActivity">
 
+    <TextView
+        android:id="@+id/errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/basics_recycleView"
         android:scrollbars="vertical"
