@@ -1,9 +1,10 @@
 package com.mayank.androidbasics.Activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.mayank.androidbasics.Adapters.LayoutsAdapter;
 import com.mayank.androidbasics.Data_Handling.home_data;
@@ -26,7 +27,6 @@ public class LayoutsActivity extends AppCompatActivity {
                 new home_data("Constraint Layout"),
                 new home_data("Table Layout"),
         };
-
         RecyclerView recyclerView = findViewById(R.id.layouts_recycleView);
         LayoutsAdapter adapter = new LayoutsAdapter(myListData);
         recyclerView.setHasFixedSize(true);

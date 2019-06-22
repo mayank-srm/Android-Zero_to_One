@@ -2,11 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
+
         android:id="@+id/cardview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,13 +21,15 @@
             android:id="@+id/linearlayout_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/ivImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image" />
+                android:src="@drawable/image"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -34,7 +38,8 @@
                 android:gravity="center"
                 android:text="TextView"
                 android:textSize="18sp"
-                android:textStyle="italic|bold" />
+                android:textStyle="italic|bold"
+                tools:ignore="HardcodedText" />
             </LinearLayout>
-            </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
             </LinearLayout>

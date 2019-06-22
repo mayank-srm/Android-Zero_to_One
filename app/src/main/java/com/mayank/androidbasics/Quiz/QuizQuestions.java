@@ -64,9 +64,8 @@ public class QuizQuestions extends SQLiteOpenHelper {
     void allQuestion() {
         ArrayList<Quiz_data> arraylist = new ArrayList<>();
         arraylist.add(new Quiz_data("What is an interface in android?", "Interface acts as a bridge between class and the outside world.", "Interface is a class.", "Interface is a layout file.", "None of the above", "Interface acts as a bridge between class and the outside world."));
-
+        arraylist.add(new Quiz_data("Can a user save all database updates in onStop ()?", "Yes, a user can save all database updates in onStop()", "No, a user can save in onSavedInstance()", "No, a user can save in a Bundle()", "No, In some situations, a user can't reach onStop()", "No, In some situations, a user can't reach onStop()"));
         this.addAllQuestions(arraylist);
-
     }
 
     private void addAllQuestions(ArrayList<Quiz_data> allQuestions) {

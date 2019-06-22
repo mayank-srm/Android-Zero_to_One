@@ -16,6 +16,11 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".BasicsActivity.EditText"
+            tools:ignore="InnerclassSeparator">
+
+        </activity>
+        <activity
             android:name=".Quiz.MainGameActivity"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="InnerclassSeparator">
@@ -75,7 +80,7 @@
             android:name=".Quiz.Time_Up"
             tools:ignore="InnerclassSeparator" />
 
-    </application>
 
+    </application>
 
 </manifest>

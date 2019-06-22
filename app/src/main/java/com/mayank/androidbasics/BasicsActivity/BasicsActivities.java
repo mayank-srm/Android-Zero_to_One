@@ -1,13 +1,13 @@
 package com.mayank.androidbasics.BasicsActivity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mayank.androidbasics.R;
 
-public class BasicsActivities extends AppCompatActivity{
+public class BasicsActivities extends AppCompatActivity {
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
