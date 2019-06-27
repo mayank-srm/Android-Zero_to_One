@@ -38,7 +38,7 @@ public class BasicsActivity extends AppCompatActivity {
         progressDoalog.show();
         /*Create handle for the RetrofitInstance interface*/
         RetrofitClientInterface.GetBasicsData service = RetrofitClientInterface.getRetrofitInstance().create(RetrofitClientInterface.GetBasicsData.class);
-        Call<List<GetBasicsCategory>> call = service.getAllDetails();
+        Call<List<GetBasicsCategory>> call = service.getBasicsDetails();
         call.enqueue(new Callback<List<GetBasicsCategory>>() {
             @Override
             public void onResponse(Call<List<GetBasicsCategory>> call, Response<List<GetBasicsCategory>> response) {

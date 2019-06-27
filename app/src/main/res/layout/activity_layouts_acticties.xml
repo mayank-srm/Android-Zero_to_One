@@ -1,8 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LayoutsActivity.LayoutsActicties">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/activity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Activity Name"
+            android:textColor="#D84315"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/activity_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Discription"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/activity_discription"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#D81B60" />
+
+        <TextView
+            android:id="@+id/main.java"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_discription"
+            android:layout_margin="25dp"
+            android:layout_marginTop="20dp"
+            android:text="MainActivity.java"
+            android:textColor="#FF6F00"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/java_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main.java"
+            android:layout_margin="10dp"
+            android:background="#E9E5E5"
+            android:text="Java Code"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/main.xml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/java_code"
+            android:layout_margin="25dp"
+            android:text="activity_main.xml"
+            android:textColor="#FF6F00"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xml_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main.xml"
+            android:layout_margin="10dp"
+            android:background="#E9E5E5"
+            android:text="Xml Code"
+            android:textIsSelectable="true" />
+    </RelativeLayout>
+</ScrollView>

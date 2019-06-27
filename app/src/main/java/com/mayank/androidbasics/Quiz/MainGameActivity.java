@@ -341,6 +341,4 @@ public class MainGameActivity extends AppCompatActivity {
         buttonC.setEnabled(true);
         buttonD.setEnabled(true);
     }
-
-
 }

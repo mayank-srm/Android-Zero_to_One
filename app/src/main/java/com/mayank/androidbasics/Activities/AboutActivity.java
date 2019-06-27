@@ -17,7 +17,6 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-
         ImageButton fb_button = findViewById(R.id.link_fb);
         ImageButton insta_button = findViewById(R.id.link_insta);
         ImageButton Linkedin_button = findViewById(R.id.link_Linkedin);

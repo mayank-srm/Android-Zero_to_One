@@ -1,36 +1,61 @@
 package com.mayank.androidbasics.Activities;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mayank.androidbasics.Adapters.LayoutsAdapter;
-import com.mayank.androidbasics.Data_Handling.home_data;
 import com.mayank.androidbasics.R;
+import com.mayank.androidbasics.ServerResponse.GetLayoutCategory;
+import com.mayank.androidbasics.WebServices.RetrofitClientInterface;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LayoutsActivity extends AppCompatActivity {
+
+    public LayoutsAdapter adapter;
+    public RecyclerView recyclerView;
+    ProgressDialog progressDoalog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layouts);
 
+        progressDoalog = new ProgressDialog(LayoutsActivity.this);
+        progressDoalog.setMessage("Loading....");
+        progressDoalog.show();
+        /*Create handle for the RetrofitInstance interface*/
+        RetrofitClientInterface.GetLayoutData service = RetrofitClientInterface.getRetrofitInstance().create(RetrofitClientInterface.GetLayoutData.class);
+        Call<List<GetLayoutCategory>> call = service.getLayoutsDetails();
+        call.enqueue(new Callback<List<GetLayoutCategory>>() {
+            @Override
+            public void onResponse(Call<List<GetLayoutCategory>> call, Response<List<GetLayoutCategory>> response) {
+                progressDoalog.dismiss();
+                generateDataList(response.body());
+            }
 
-        home_data[] myListData = new home_data[]{
-                new home_data("Linear Layout"),
-                new home_data("Horizontal Layout"),
-                new home_data("Relative Layout"),
-                new home_data("Frame Layout"),
-                new home_data("Grid Layout"),
-                new home_data("Constraint Layout"),
-                new home_data("Table Layout"),
-        };
-        RecyclerView recyclerView = findViewById(R.id.layouts_recycleView);
-        LayoutsAdapter adapter = new LayoutsAdapter(myListData);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            @Override
+            public void onFailure(Call<List<GetLayoutCategory>> call, Throwable t) {
+                progressDoalog.dismiss();
+                Toast.makeText(LayoutsActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void generateDataList(List<GetLayoutCategory> Category) {
+        recyclerView = findViewById(R.id.layouts_recycleView);
+        adapter = new LayoutsAdapter(Category);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(LayoutsActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
 }

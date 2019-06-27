@@ -19,10 +19,13 @@
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:title="About Developer"
+            tools:ignore="HardcodedText" />
     </group>
 
-    <item android:title="Communicate">
+    <item
+        android:title="Communicate"
+        tools:ignore="HardcodedText">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -31,7 +34,11 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="Rate Us" />
+            <item
+                android:id="@+id/nav_suggest"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Suggest Us" />
         </menu>
     </item>
 

@@ -17,25 +17,46 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
-            android:name=".BasicsActivity.EditTextActivity"
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             tools:ignore="InnerclassSeparator">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".Activities.OverviewActivities"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".BasicsActivity.BottomExample"
+            android:label="@string/title_activity_bottom_example"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.OverviewActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.HistoryActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".BasicsActivity.EditTextActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Quiz.MainGameActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            tools:ignore="InnerclassSeparator">
-
-        </activity>
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Quiz.HomeScreen"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/Theme.Design.NoActionBar"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.InterViewActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".LayoutsActivity.LayoutsActicties"
+            android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activities.AboutActivity"
@@ -56,11 +77,6 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="InnerclassSeparator">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activities.SampleCodesActivity"
@@ -80,8 +96,6 @@
         <activity
             android:name=".Quiz.Time_Up"
             tools:ignore="InnerclassSeparator" />
-
-
     </application>
 
 </manifest>

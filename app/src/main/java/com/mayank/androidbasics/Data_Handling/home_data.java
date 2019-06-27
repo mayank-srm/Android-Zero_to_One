@@ -6,10 +6,17 @@ package com.mayank.androidbasics.Data_Handling;
 public class home_data {
 
     public  String activityname;
-    public home_data(String activityname) {
+    public String imagelink;
+
+    public home_data(String activityname, String image) {
         this.activityname = activityname;
+        this.imagelink = image;
     }
     public String getActivity() {
         return activityname;
+    }
+
+    public String getImage() {
+        return imagelink;
     }
 }

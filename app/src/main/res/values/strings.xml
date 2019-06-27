@@ -44,4 +44,9 @@
     <string name="next">Next</string>
     <string name="cancel">✖</string>
     <string name="developer_name">MAYANK SINGH</string>
+    <string name="title_activity_bottom_example">BottomExample</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

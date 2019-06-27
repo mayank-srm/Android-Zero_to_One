@@ -41,12 +41,14 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         home_data[] myListData = new home_data[] {
-                new home_data("Basics"),
-                new home_data("Sample Codes"),
-                new home_data("Layouts"),
-                new home_data("Interview Questions"),
-                new home_data("Quiz (Beta)"),
-                new home_data("Coming Soon")
+                new home_data("Android OverView", "https://www.tutorialspoint.com/android/images/who_i_am.jpg"),
+                new home_data("History", "https://i.ytimg.com/vi/KXi7OI2z0KQ/maxresdefault.jpg"),
+                new home_data("Basics Widgets", "https://image.slidesharecdn.com/androidbasicsupdatedfeb16-180201231136/95/android-basics-updated-feb-2016-1-638.jpg?cb=1517528486"),
+                new home_data("Layouts", "https://image.slidesharecdn.com/androidbasicsupdatedfeb16-180201231136/95/android-basics-updated-feb-2016-1-638.jpg?cb=1517528486"),
+                new home_data("Quiz (Beta)", "https://previews.123rf.com/images/vladwel/vladwel1606/vladwel160600093/58025579-quiz-logo-with-speech-bubble-symbols-concept-of-questionnaire-show-sing-quiz-button-question-competi.jpg"),
+                new home_data("Interview Questions", "https://www.firstnaukri.com/career-guidance/wp-content/uploads/2019/01/common-interview-questions-for-freshers.jpg"),
+                new home_data("Sample Codes", "http://i.imgur.com/DvpvklR.png"),
+                new home_data("Coming Soon", "https://img.freepik.com/free-vector/coming-soon-concept_53562-1230.jpg?size=338&ext=jpg")
         };
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -93,9 +95,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

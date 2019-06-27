@@ -14,69 +14,45 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mayank.androidbasics.BasicsActivity.BottomExample;
-import com.mayank.androidbasics.BasicsActivity.EditTextActivity;
+import com.mayank.androidbasics.Activities.OverviewActivities;
 import com.mayank.androidbasics.R;
-import com.mayank.androidbasics.Sample_Code_Activity.LoadingActivity;
-import com.mayank.androidbasics.ServerResponse.GetBasicsCategory;
+import com.mayank.androidbasics.ServerResponse.GetOverviewCategory;
 
 import java.util.List;
 
 /**
- * Created by MAYANK SINGH on 29-05-2019.
+ * Created by MAYANK SINGH on 23-06-2019.
  */
-public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder> {
+public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHolder> {
 
-    private List<GetBasicsCategory> dataList;
+    private List<GetOverviewCategory> dataList;
     private Context context;
 
-    public BasicsAdapter(List<GetBasicsCategory> dataList) {
+    public OverviewAdapter(List<GetOverviewCategory> dataList) {
         this.context = context;
         this.dataList = dataList;
     }
 
     @NonNull
     @Override
-    public BasicsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OverviewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_basics, parent, false);
-        return new BasicsAdapter.ViewHolder(listItem);
+        View listItem = layoutInflater.inflate(R.layout.list_overview, parent, false);
+        return new OverviewAdapter.ViewHolder(listItem);
     }
 
     @SuppressLint("RecyclerView")
     @Override
-    public void onBindViewHolder(@NonNull BasicsAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull OverviewAdapter.ViewHolder holder, final int position) {
         holder.textView_basics.setText(dataList.get(position).getName());
 
-        holder.button_basics.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Intent intent;
-                switch (position) {
-                    case 0:
-                        intent = new Intent(view.getContext(), EditTextActivity.class);
-                        break;
-
-                    case 1:
-                        intent = new Intent(view.getContext(), LoadingActivity.class);
-                        break;
-
-                    default:
-                        intent = new Intent(view.getContext(), LoadingActivity.class);
-                        break;
-                }
-                view.getContext().startActivity(intent);
-            }
-        });
         holder.relativeLayout_basics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "click on item: " + dataList.get(position).getName(), Toast.LENGTH_LONG).show();
-                Intent i = new Intent(view.getContext(), BottomExample.class);
+                Intent i = new Intent(view.getContext(), OverviewActivities.class);
                 i.putExtra("activity_name", dataList.get(position).getName());
-                i.putExtra("discription", dataList.get(position).getDesc());
-                i.putExtra("javacode", dataList.get(position).getJavaCode());
-                i.putExtra("xmlcode", dataList.get(position).getXmlCode());
+                i.putExtra("discription", dataList.get(position).getDescription());
                 view.getContext().startActivity(i);
             }
         });
@@ -88,10 +64,11 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public final Context mcontext_basics;
         public TextView textView_basics;
         public RelativeLayout relativeLayout_basics;
-        public final Context mcontext_basics;
         public Button button_basics;
+
         public ViewHolder(View itemView) {
             super(itemView);
             mcontext_basics = itemView.getContext();
