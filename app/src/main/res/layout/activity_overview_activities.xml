@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.OverviewActivities">
-
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
@@ -28,12 +27,27 @@
         android:layout_alignParentEnd="true"
         android:background="#5C6BC0" />
 
-    <TextView
-        android:id="@+id/overview_textview"
-        android:layout_width="match_parent"
+
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="23dp"
-        android:textColor="@color/txtSecondary"
-        android:textSize="20sp" />
+        android:layout_margin="20dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/overview_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/txtSecondary"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

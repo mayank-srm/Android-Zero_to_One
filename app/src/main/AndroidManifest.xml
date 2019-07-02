@@ -20,7 +20,6 @@
             android:name=".Activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             tools:ignore="InnerclassSeparator">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
