@@ -10,7 +10,7 @@ import com.mayank.androidbasics.R;
 public class OverviewActivities extends AppCompatActivity {
 
     TextView textView;
-    String activityname, activitydiscription;
+    String activityname, activitydescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class OverviewActivities extends AppCompatActivity {
         textView = findViewById(R.id.overview_textview);
 
         activityname = getIntent().getStringExtra("activity_name");
-        activitydiscription = getIntent().getStringExtra("discription");
-        textView.setText(activitydiscription);
+        activitydescription = getIntent().getStringExtra("description");
+        textView.setText(activitydescription);
     }
 }

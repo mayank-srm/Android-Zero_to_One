@@ -46,51 +46,48 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.mTitle.setText(list_data_home[position].getActivity());
         Picasso.get().load(list_data_home[position].getImage()).into(holder.mmageview);
-        holder.mlinearlayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        holder.mlinearlayout.setOnClickListener(view -> {
 
-                Intent intent = null;
-                switch(position){
-                    case 0:
-                        intent = new Intent(view.getContext(), OverviewActivity.class);
-                        break;
+            Intent intent = null;
+            switch (position) {
+                case 0:
+                    intent = new Intent(view.getContext(), OverviewActivity.class);
+                    break;
 
-                    case 1:
-                        intent = new Intent(view.getContext(), HistoryActivity.class);
-                        break;
+                case 1:
+                    intent = new Intent(view.getContext(), HistoryActivity.class);
+                    break;
 
-                    case 2:
-                        intent = new Intent(view.getContext(), BasicsActivity.class);
-                        break;
+                case 2:
+                    intent = new Intent(view.getContext(), BasicsActivity.class);
+                    break;
 
-                    case 3:
-                        intent = new Intent(view.getContext(), LayoutsActivity.class);
-                        break;
+                case 3:
+                    intent = new Intent(view.getContext(), LayoutsActivity.class);
+                    break;
 
-                    case 4:
-                        intent = new Intent(view.getContext(), HomeScreen.class);
-                        break;
+                case 4:
+                    intent = new Intent(view.getContext(), HomeScreen.class);
+                    break;
 
-                    case 5:
-                        // intent = new Intent(view.getContext(), InterViewActivity.class);
-                        Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-                        break;
+                case 5:
+                    // intent = new Intent(view.getContext(), InterViewActivity.class);
+                    Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    break;
 
-                    case 6:
-                        // intent = new Intent(view.getContext(), SampleCodesActivity.class);
-                        Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        // intent = new Intent(view.getContext(), LoadingActivity.class);
-                        Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                if (intent != null) {
-                    view.getContext().startActivity(intent);
-                }
-                // Toast.makeText(view.getContext(),"click on item: "+myListData.getActivity(),Toast.LENGTH_LONG).show();
+                case 6:
+                    // intent = new Intent(view.getContext(), SampleCodesActivity.class);
+                    Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    // intent = new Intent(view.getContext(), LoadingActivity.class);
+                    Toast.makeText(view.getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    break;
             }
+            if (intent != null) {
+                view.getContext().startActivity(intent);
+            }
+            // Toast.makeText(view.getContext(),"click on item: "+myListData.getActivity(),Toast.LENGTH_LONG).show();
         });
     }
     @Override

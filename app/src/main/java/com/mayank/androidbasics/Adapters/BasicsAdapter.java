@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mayank.androidbasics.BasicsActivity.BottomExample;
+import com.mayank.androidbasics.BasicsActivity.BottomBasics;
 import com.mayank.androidbasics.BasicsActivity.EditTextActivity;
 import com.mayank.androidbasics.R;
 import com.mayank.androidbasics.Sample_Code_Activity.LoadingActivity;
@@ -28,10 +28,8 @@ import java.util.List;
 public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder> {
 
     private List<GetBasicsCategory> dataList;
-    private Context context;
 
     public BasicsAdapter(List<GetBasicsCategory> dataList) {
-        this.context = context;
         this.dataList = dataList;
     }
 
@@ -45,7 +43,7 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
 
     @SuppressLint("RecyclerView")
     @Override
-    public void onBindViewHolder(@NonNull BasicsAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.textView_basics.setText(dataList.get(position).getName());
 
         holder.button_basics.setOnClickListener(new View.OnClickListener() {
@@ -68,17 +66,15 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
                 view.getContext().startActivity(intent);
             }
         });
-        holder.relativeLayout_basics.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "click on item: " + dataList.get(position).getName(), Toast.LENGTH_LONG).show();
-                Intent i = new Intent(view.getContext(), BottomExample.class);
-                i.putExtra("activity_name", dataList.get(position).getName());
-                i.putExtra("discription", dataList.get(position).getDesc());
-                i.putExtra("javacode", dataList.get(position).getJavaCode());
-                i.putExtra("xmlcode", dataList.get(position).getXmlCode());
-                view.getContext().startActivity(i);
-            }
+        holder.relativeLayout_basics.setOnClickListener(view -> {
+            Toast.makeText(view.getContext(), "click on item: " + dataList.get(position).getName(), Toast.LENGTH_LONG).show();
+            Intent i = new Intent(view.getContext(), BottomBasics.class);
+
+            i.putExtra("activity_name", dataList.get(position).getName());
+            i.putExtra("description", dataList.get(position).getDesc());
+            i.putExtra("javacode", dataList.get(position).getJavaCode());
+            i.putExtra("xmlcode", dataList.get(position).getXmlCode());
+            view.getContext().startActivity(i);
         });
     }
 
@@ -92,8 +88,10 @@ public class BasicsAdapter extends RecyclerView.Adapter<BasicsAdapter.ViewHolder
         public RelativeLayout relativeLayout_basics;
         public final Context mcontext_basics;
         public Button button_basics;
+
         public ViewHolder(View itemView) {
             super(itemView);
+
             mcontext_basics = itemView.getContext();
             this.textView_basics = itemView.findViewById(R.id.basics_textView);
             relativeLayout_basics = itemView.findViewById(R.id.basics_relativeLayout);

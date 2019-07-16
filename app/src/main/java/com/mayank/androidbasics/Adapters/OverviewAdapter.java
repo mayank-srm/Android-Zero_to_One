@@ -51,7 +51,7 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
                 //   Toast.makeText(view.getContext(), "click on item: " + dataList.get(position).getName(), Toast.LENGTH_LONG).show();
                 Intent i = new Intent(view.getContext(), OverviewActivities.class);
                 i.putExtra("activity_name", dataList.get(position).getName());
-                i.putExtra("discription", dataList.get(position).getDescription());
+                i.putExtra("description", dataList.get(position).getDescription());
                 view.getContext().startActivity(i);
             }
         });

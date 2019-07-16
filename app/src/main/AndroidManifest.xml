@@ -30,7 +30,7 @@
             android:name=".Activities.OverviewActivities"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".BasicsActivity.BottomExample"
+            android:name=".BasicsActivity.BottomBasics"
             android:label="@string/title_activity_bottom_example"
             tools:ignore="InnerclassSeparator" />
         <activity

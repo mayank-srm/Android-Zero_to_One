@@ -22,14 +22,14 @@ public class LayoutsActicties extends AppCompatActivity {
         if (getIntent().hasExtra("activity_name") && getIntent().hasExtra("discription")) {
 
             String activityname = getIntent().getStringExtra("activity_name");
-            String activitydiscription = getIntent().getStringExtra("discription");
+            String activitydescription = getIntent().getStringExtra("description");
             String code = getIntent().getStringExtra("Code");
 
-            setmTextMessage(activityname, activitydiscription, code);
+            setmTextMessage(activityname, activitydescription, code);
         }
     }
 
-    private void setmTextMessage(String activityname, String activitydiscription, String code) {
+    private void setmTextMessage(String activityname, String activitydescription, String code) {
 
         TextView actname = findViewById(R.id.activity_name);
         TextView actdis = findViewById(R.id.activity_discription);
@@ -38,7 +38,7 @@ public class LayoutsActicties extends AppCompatActivity {
 
         actname.setText(activityname);
         actdis.setText(code);
-        Code.setText(activitydiscription);
+        Code.setText(activitydescription);
 
     }
 }

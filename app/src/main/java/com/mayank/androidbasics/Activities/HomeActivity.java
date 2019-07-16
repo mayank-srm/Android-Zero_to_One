@@ -35,7 +35,6 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        closeButton = findViewById(R.id.close_button);
         builder = new AlertDialog.Builder(this);
 
         setSupportActionBar(toolbar);

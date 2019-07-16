@@ -69,7 +69,7 @@ public class LayoutsAdapter extends RecyclerView.Adapter<LayoutsAdapter.ViewHold
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), LayoutsActicties.class);
                 i.putExtra("activity_name", dataList.get(position).getName());
-                i.putExtra("discription", dataList.get(position).getDescription());
+                i.putExtra("description", dataList.get(position).getDescription());
                 i.putExtra("Code", dataList.get(position).getCode());
                 view.getContext().startActivity(i);
 

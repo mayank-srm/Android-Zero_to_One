@@ -3,7 +3,6 @@ package com.mayank.androidbasics.Activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,29 +20,20 @@ public class AboutActivity extends AppCompatActivity {
         ImageButton insta_button = findViewById(R.id.link_insta);
         ImageButton Linkedin_button = findViewById(R.id.link_Linkedin);
 
-        fb_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.fb.com/mayu198"); // missing 'http://' will cause crashed
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        fb_button.setOnClickListener(v -> {
+            Uri uri = Uri.parse("http://www.fb.com/mayu198"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
-        insta_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.instagram.com/singh.mayank_"); // missing 'http://' will cause crashed
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        insta_button.setOnClickListener(v -> {
+            Uri uri = Uri.parse("https://www.instagram.com/singh.mayank_"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
-        Linkedin_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.linkedin.com/in/mayank-singh-398b05143/"); // missing 'http://' will cause crashed
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        Linkedin_button.setOnClickListener(v -> {
+            Uri uri = Uri.parse("https://www.linkedin.com/in/mayank-singh-398b05143/"); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
     }
 
